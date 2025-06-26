@@ -1,4 +1,5 @@
 package org.lessons.java.shop;
+import java.math.BigDecimal;
 import java.util.Random;
 
 public class Prodotto {
@@ -6,13 +7,13 @@ public class Prodotto {
     int codice;
     String nome;
     String descrizione;
-    float prezzo;
-    int iva;
+    BigDecimal prezzo;
+    BigDecimal iva;
 
     Random random = new Random();
 
 
-     public Prodotto(String nome, String descrizione, float prezzo, int iva){
+     public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva){
         
         this.codice = randomCode();
         this.nome = nome;
@@ -24,17 +25,19 @@ public class Prodotto {
 
     public int randomCode(){
         // codice = random.nextInt(10000)
-        codice = 10000 + random.nextInt(90000);
+        codice = random.nextInt(99999);
         return codice;
     }
 
-    public void prezzoBase(float prezzo){
-        this.prezzo = prezzo;
+    public BigDecimal prezzoBase(){
+         return this.prezzo;
     }
 
-    public float prezzoConIva(){
-        float tot = this.prezzo + (this.prezzo * this.iva)/100;
-        return tot;
+    public BigDecimal prezzoConIva(){
+        if(prezzo != null && iva != null){
+            return prezzo.add(iva).setScale(2);
+        }
+        return null;
     }
 
     public String extendName(){
