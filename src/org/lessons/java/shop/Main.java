@@ -12,7 +12,8 @@ public class Main {
 
         System.out.println();
         System.out.println("-----PRODOTTO-----");
-
+        
+        System.out.println(playstation.getNome());
         System.out.println("Codice e nome: " + playstation.extendName());
         System.out.println("Prezzo base: " + playstation.prezzoBase());
         System.out.println("Prezzo con iva: " + playstation.prezzoConIva());
