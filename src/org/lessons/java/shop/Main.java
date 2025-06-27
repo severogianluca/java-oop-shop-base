@@ -11,10 +11,10 @@ public class Main {
                 new BigDecimal(22));
 
         System.out.println();
-        System.out.println("PRODOTTO");
+        System.out.println("-----PRODOTTO-----");
 
-        System.out.println("codice e nome: " + playstation.extendName());
-        System.out.println(playstation.prezzoBase());
-        System.out.println(playstation.prezzoConIva());
+        System.out.println("Codice e nome: " + playstation.extendName());
+        System.out.println("Prezzo base: " + playstation.prezzoBase());
+        System.out.println("Prezzo con iva: " + playstation.prezzoConIva());
     }
 }

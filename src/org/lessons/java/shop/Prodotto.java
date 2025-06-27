@@ -1,5 +1,6 @@
 package org.lessons.java.shop;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Random;
 
 public class Prodotto {
@@ -35,7 +36,7 @@ public class Prodotto {
 
     public BigDecimal prezzoConIva(){
         if(prezzo != null && iva != null){
-            return prezzo.add(iva).setScale(2);
+            return prezzo.add(iva).setScale(2, RoundingMode.DOWN);
         }
         return null;
     }
